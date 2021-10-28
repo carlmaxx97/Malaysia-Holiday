@@ -79,7 +79,7 @@ holidays = [word.replace("Disember", "December "+year) for word in holidays]
 from datetime import datetime
 
 holidays = [datetime.strptime(word, "%d %B %Y") for word in holidays]
-holidays = [word.strftime("%Y/%m/%d") for word in holidays]
+holidays = [word.strftime("%Y-%m-%d") for word in holidays]
 holidays.sort()
 print(list(dict.fromkeys(holidays)))
 
