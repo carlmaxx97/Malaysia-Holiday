@@ -13,7 +13,7 @@ import re
 
 
 file = 'http://www.kabinet.gov.my/bkpp/pdf/hari_kelepasan_am/hka_2021.pdf'
-data  = tb.read_pdf(file,pages = 'all', stream=True)
+data  = read_pdf(file,pages = 'all', stream=True)
 print(data)
 
 
