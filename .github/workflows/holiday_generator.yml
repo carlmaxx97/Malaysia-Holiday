@@ -43,6 +43,7 @@ jobs:
       
       - name: Main
         run: |
+          pip install tabula-py
           pip install tabula
           pip install pandas
           python holiday.py
