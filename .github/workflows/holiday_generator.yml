@@ -40,6 +40,10 @@ jobs:
           git config --global user.email "carlmaxx97@outlook.com"
           git config --global user.name "carlmaxx97"
       
+      - name: Main
+        run: |
+          git rm holidays.json
+        
       
       - name: Main
         run: |
