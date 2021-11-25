@@ -12,7 +12,7 @@ import re
 # In[283]:
 
 
-file = 'http://www.kabinet.gov.my/bkpp/pdf/hari_kelepasan_am/hka_2021.pdf'
+file = 'https://www.kabinet.gov.my/bkpp/pdf/hari_kelepasan_am/hka_2021.pdf'
 data  = read_pdf(file,pages = 'all', stream=True)
 print(data)
 
