@@ -8,13 +8,6 @@ from tabula.io import read_pdf
 import pandas as pd
 import re
 
-import sys
-
-if ((3, 0) <= sys.version_info <= (3, 9)):
-    from urllib.parse import urlparse
-elif ((2, 0) <= sys.version_info <= (2, 9)):
-    from urlparse import urlparse
-
 
 # In[283]:
 
