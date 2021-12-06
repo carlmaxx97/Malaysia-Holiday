@@ -9,7 +9,7 @@ on:
   #    - main
       
   schedule:
-    - cron: '0 0/3 * * *'
+    - cron: '0 * * * *'
     
   pull_request:
     branches:
@@ -43,10 +43,7 @@ jobs:
       
       - name: Main
         run: |
-          pip install tabula-py
-          pip install tabula
-          pip install pandas
-          python holiday.py
+          python holiday.py ${{ secrets.API }}
         
       - name: git add
         run: |
