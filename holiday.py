@@ -26,7 +26,6 @@ todos = json.loads(data)
 l = []
 for todo in todos['response']['holidays']:
         l.append(todo['date']['iso'][0:10])
-print(l)
 with open('holidays.json', 'w') as f:
     json.dump(l, f)
     
