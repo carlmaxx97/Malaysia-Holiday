@@ -10,7 +10,7 @@ from datetime import date
 
 user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
 api = sys.argv[1]
-url = "https://calendarific.com/api/v2/holidays?&api_key="+api+"&country=MY&year="+str(date.today().year)
+url = "https://www.googleapis.com/calendar/v3/calendars/en.malaysia%23holiday@group.v.calendar.google.com/events?key="+api
 headers={'User-Agent':user_agent,} 
 
 request=urllib.request.Request(url,None,headers) #The assembled request
@@ -22,10 +22,15 @@ data = response.read() # The data u need
 
 
 import json
+
 todos = json.loads(data)
 l = []
-for todo in todos['response']['holidays']:
-        l.append(todo['date']['iso'][0:10])
+for todo in todos['items']:
+    l.append(todo['start']['date'])
+l=list(dict.fromkeys(l))
+l.sort()
+l=list(filter(lambda k: str(date.today().year) in k, l))
+
 with open('holidays.json', 'w') as f:
     json.dump(l, f)
     
